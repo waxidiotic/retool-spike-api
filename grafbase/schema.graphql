@@ -1,0 +1,18 @@
+type Customers @model {
+  customers: [Customer]
+}
+
+type Customer @model {
+  id: ID!
+  name: String!
+  freeTrialExpiration: DateTime
+  customerType: Int
+  createDate: DateTime
+  updateDate: DateTime
+  customerDomain: [CustomerDomain]
+}
+
+type CustomerDomain @model {
+  domain: String
+  customer: Customer
+}
